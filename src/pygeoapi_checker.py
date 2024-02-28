@@ -47,6 +47,7 @@ def make_request(url, base = None):
         for link in links:
             make_request(link, base=base)
     except Exception as exc:
+        logging.error(url)
         REQUESTS[url] = str(exc)
 
 
@@ -60,8 +61,8 @@ def recursive_check_url(url, output):
     for k, v in REQUESTS.items():
         groups[v] = groups.get(v, []) + [k]
 
-    with open(output, 'w') as f:
-        json.dump(groups, f)
+    with open(output, "w") as f:
+        json.dump(groups, f, indent=4)
 
 
 if __name__ == '__main__':
