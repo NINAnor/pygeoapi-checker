@@ -1,9 +1,10 @@
 [project]
-name = ""
-version = ""
+name = "pygeoapi-checker"
+version = "0.1.0"
 description = ""
 authors = [
     {name = "Niccolò Cantù", email = "niccolo.cantu@nina.no"},
+    {name = "Francesco Frassinelli", email = "francesco.frassinelli@nina.no"},
 ]
 dependencies = [
     "requests>=2.31.0",
@@ -13,3 +14,5 @@ requires-python = ">=3.10"
 readme = "README.md"
 license = {text = "MIT"}
 
+[project.scripts]
+pygeoapi-checker = "pygeoapi_checker:recursive_check_url"

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import click
 import requests
 import json
@@ -51,7 +53,7 @@ def make_request(url, base = None):
 @click.command()
 @click.argument('url')
 @click.option('--output', default='result.json')
-def recuresive_check_url(url, output):
+def recursive_check_url(url, output):
     make_request(url)
 
     groups = {}
@@ -63,4 +65,4 @@ def recuresive_check_url(url, output):
 
 
 if __name__ == '__main__':
-    recuresive_check_url()
+    recursive_check_url()
